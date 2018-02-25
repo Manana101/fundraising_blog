@@ -1,7 +1,13 @@
-<% @posts.each do |post| %>
-  <article class="post">
-    <h1><%= link_to "post.title", post %></h1>
-    <p><%= post.content %></p>
-    <%= image_tag post.image_url.to_s, alt: "Image", class: "img-responsive" %>
-  </article>
-<% end %>
+<article class="post">
+  <div class="container">
+    <div class="row">
+      <% @posts.each do |post| %>
+        <div class="col-xs-4">
+          <h1><%= link_to "post.title", post %></h1>
+          <p><%= post.content %></p>
+          <%= image_tag post.image_url.to_s, alt: "Image", class: "img-responsive" %>
+        </div>
+      <% end %>
+    </div>
+  </div>
+</article>
