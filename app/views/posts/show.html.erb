@@ -1,21 +1,19 @@
 <article class="post">
-  <div class="container">
-    <div class="row">
-      <div class="col-xs-12">
-        <h1><%= @post.title %></h1>
-        <p><%= @post.content %></p>
-        <%= image_tag @post.image_url.to_s, alt: "Image", class: "img-responsive" %>
-        <% if session[:admin] then %>
-          <%= link_to edit_post_path(@post), class: "btn btn-default" do %>
-            <span class="glyphicon glyphicon-align-left" aria-hidden="true"></span>
-            Edit
-          <% end %>
-          <%= link_to @post, method: :delete, data: { confirm: "Are you sure?" }, class: "btn btn-default" do %>
-            <span class="glyphicon glyphicon-trash" aria-hidden="true"></span>
-            Delete
-          <% end %>
+  <div class="row">
+    <div class="col">
+      <h1><%= @post.title %></h1>
+      <p><%= @post.content %></p>
+      <% if @post.image_url %>
+        <%= image_tag @post.image_url.to_s, alt: "Image", class: "img-fluid postImg" %>
+      <% end %>
+      <% if session[:admin] %>
+        <%= link_to edit_post_path(@post), class: "btn btn-default" do %>
+          <span class="btn btn-warning" aria-hidden="true">Edit post</span>
         <% end %>
-      </div>
+        <%= link_to @post, method: :delete, data: { confirm: "Are you sure?" }, class: "btn btn-default" do %>
+          <span class="btn btn-danger" aria-hidden="true">Delete post</span>
+        <% end %>
+      <% end %>
     </div>
   </div>
 </article>

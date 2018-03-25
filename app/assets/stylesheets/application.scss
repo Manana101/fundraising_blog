@@ -11,5 +11,8 @@
  * It is generally better to create a new file per style scope.
  */
 
-@import "bootstrap-sprockets";
-@import "bootstrap";
+ // Custom bootstrap variables must be set or imported *before* bootstrap.
+ // https://github.com/twbs/bootstrap-rubygem/blob/master/assets/stylesheets/bootstrap/_variables.scss
+ @import "bootstrap";
+ @import "shared";
+ @import "posts";

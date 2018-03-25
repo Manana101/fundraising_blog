@@ -1,18 +1,22 @@
-<nav class="navbar navbar-default navbar-fixed-top">
-  <div class="container-fluid">
-    <ul>
-      <% Category.all.each do |category| %>
-        <li>
-          <%= link_to category.name, posts_path(category: category.name) %>
-        </li>
-      <% end %>
-    </ul>
-    
-    <% if session[:admin] then %>
-      <%= link_to new_post_path do %>
-        <span class="glyphicon glyphicon-plus-sign" aria-hidden="true"></span>
-      <% end %>
-    <% end %>
+<div class="container-fluid">
+  <div class="row position-relative">
+    <div class="col">
+      <nav>
+        <ul class="nav justify-content-end">
+          <% Category.all.each do |category| %>
+            <li class="nav-item">
+              <%= link_to category.name, posts_path(category: category.name), class: "nav-link" %>
+            </li>
+          <% end %>
+        </ul>
 
+        <% if session[:admin] then %>
+          <%= link_to new_post_path, class: "position-absolute editBtn" do %>
+            <span class="btn btn-warning" aria-hidden="true">Add new</span>
+          <% end %>
+        <% end %>
+
+      </nav>
+    </div>
   </div>
-</nav>
+</div>

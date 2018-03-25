@@ -33,10 +33,12 @@ gem 'jbuilder', '~> 2.5'
 # gem 'bcrypt', '~> 3.1.7'
 
 # bootstrap
-gem 'bootstrap-sass'
+gem 'bootstrap', '~> 4.0.0'
 
 # images upload
 gem 'carrierwave'
+
+gem 'enumerize'
 
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development

@@ -1,15 +1,29 @@
 <% @posts.each do |post| %>
-  <article class="post">
-    <div class="container">
-      <div class="row">
-        <h1><%= link_to post.title, post %></h1>
-        <p><%= post.content %></p>
-        <%= image_tag post.image_url.to_s, alt: "Image", class: "img-responsive" %>
-        <% if session[:admin] then %>
-          <%= link_to edit_post_path(post), class: "btn btn-default" do %>
-            <span class="glyphicon glyphicon-align-left" aria-hidden="true"></span>
+  <article class="postContainer position-relative">
+    <div class="row no-gutters">
+      <div class="col">
+
+        <div class="d-flex flex-wrap justify-content-center align-items-center <%= post.type %> postWrapper">
+
+          <% if post.image_url %>
+            <%= image_tag post.image_url.to_s, alt: "Image", class: "img-fluid postImg" %>
           <% end %>
-        <% end %>
+
+          <div class="post d-flex flex-wrap justify-content-center align-items-center">
+            <h2 class="title"><%= post.title %></h2>
+            <p class="content">
+              <%= post.description %>
+            </p>
+            <%= link_to "Show more", post, class: "btn btn-outline-light" %>
+          </div>
+
+          <% if session[:admin] %>
+            <%= link_to edit_post_path(post), class: "btn btn-default position-absolute editBtn" do %>
+              <span class="btn btn-warning" aria-hidden="true">Edit post</span>
+            <% end %>
+          <% end %>
+
+        </div>
       </div>
     </div>
   </article>
