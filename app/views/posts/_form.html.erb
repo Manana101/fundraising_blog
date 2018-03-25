@@ -17,6 +17,14 @@
   <p>Please use only horizontally oriented images. Standard rectangular format is preferred. Square or vertically oriented images might be cut in case of full_width_image, and they might take too much of the page area with half_width_image.</p>
   <%= f.file_field :image %><br><br>
 
+  <%= f.label :button_text %><br>
+  <p>If you want to change the default "Show more" button text, type it here (please keep it short)</p>
+  <%= f.text_field :button_text, placeholder: "Type the post title here" %><br><br>
+
+  <%= f.label :url %><br>
+  <p>By default, clicking "Show more" button will redirect to page with post content. If you want it to redirect to different page, please paste url here.</p>
+  <%= f.text_field :url, placeholder: "Type the post title here" %><br><br>
+
   <%= f.submit %>
 
 <% end %>

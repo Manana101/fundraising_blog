@@ -9,7 +9,11 @@ class Post < ApplicationRecord
 
   mount_uploader :image, ImageUploader
 
-  # def sanitized_content
-  #   Sanitize.fragment(html, Sanitize::Config::RELAXED)
-  # end
+  def get_url
+    url || self
+  end
+
+  def get_button_text
+    button_text || "Show more"
+  end
 end

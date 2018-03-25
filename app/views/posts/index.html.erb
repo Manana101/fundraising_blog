@@ -16,7 +16,7 @@
                 <%= raw SafeHtml.relaxed(post.description) %>
               </p>
               <% if !post.content.empty? %>
-                <%= link_to "Show more", post, class: "btn btn-outline-light" %>
+                <%= link_to post.get_button_text, post.get_url, class: "btn btn-outline-light" %>
               <% end %>
             </div>
 
