@@ -8,10 +8,11 @@
   <%= f.text_field :title, placeholder: "Type the post title here" %><br>
   <%= f.label :description %><br>
   <%= f.text_area :description, size: "60x12",
-    placeholder: "Type short post description here (optional, max. 100 characters for full_width_image, max. 200 for half_width_image)" %><br>
+    placeholder: "Description is text that will appear on the post's list in the category you chose. If you chose full_width_image, keep it very short, or text might be not fully visible on the page. For half_width_image, it should be quite short too, otherwise it might look bad. It can be longer for no_image." %><br>
   <%= f.label :content %><br>
-  <%= f.text_area :content, size: "60x12", placeholder: "Type the post content here (optional)" %><br>
+  <%= f.text_area :content, size: "60x12", placeholder: "Content is text that will appear on the new page, after clicking 'show more' button. You can skip it - in this case there will be no 'show more' button at all." %><br>
   <%= f.label :image %><br>
+  <p>Please use only horizontally oriented images. Standard rectangular format is preferred. Square or vertically oriented images might be cut in case of full_width_image, and they might take too much of the page area with half_width_image.</p>
   <%= f.file_field :image %><br>
 
   <%= f.submit %>

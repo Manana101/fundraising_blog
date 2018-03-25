@@ -21,12 +21,12 @@
       text-align: center;
 
       .title,
-      .content {
+      .description {
         width: 100%;
         color: $white;
       }
 
-      .content {
+      .description {
         padding: 20px 0;
       }
 
@@ -36,7 +36,7 @@
 
       @include media-breakpoint-up(md) {
         .title,
-        .content {
+        .description {
           padding-right: 30px;
           padding-left: 30px;
         }

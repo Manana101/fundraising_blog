@@ -12,10 +12,12 @@
 
             <div class="post d-flex flex-wrap justify-content-center align-items-center">
               <h2 class="title"><%= post.title %></h2>
-              <p class="content">
+              <p class="description">
                 <%= post.description %>
               </p>
-              <%= link_to "Show more", post, class: "btn btn-outline-light" %>
+              <% if !post.content.empty? %>
+                <%= link_to "Show more", post, class: "btn btn-outline-light" %>
+              <% end %>
             </div>
 
             <% if session[:admin] %>

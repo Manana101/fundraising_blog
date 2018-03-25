@@ -5,7 +5,7 @@ class Post < ApplicationRecord
   enumerize :type, in: { full_width_image: 0, half_width_image: 1, no_image: 2 }
 
   belongs_to :category
-  validates :title, :content, :category_id, presence: true
+  validates :title, :description, :type, :category_id, presence: true
 
   mount_uploader :image, ImageUploader
 
