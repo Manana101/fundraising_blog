@@ -17,4 +17,8 @@
 .editBtn {
   top: 1px;
   left: 20px;
+
+  & + .editBtn {
+    left: 120px;
+  }
 }

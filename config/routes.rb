@@ -4,5 +4,6 @@ Rails.application.routes.draw do
 
   resources :posts
   get 'admin', to: 'posts#admin'
-  
+  get 'logout', to: 'posts#logout'
+
 end

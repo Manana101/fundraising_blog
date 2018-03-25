@@ -49,6 +49,11 @@ class PostsController < ApplicationController
     redirect_to root_path if authenticate
   end
 
+  def logout
+    session[:admin] = false
+    redirect_back(fallback_location: root_path)
+  end
+
   private
 
     def post_params
