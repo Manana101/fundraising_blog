@@ -10,10 +10,18 @@ class Post < ApplicationRecord
   mount_uploader :image, ImageUploader
 
   def get_url
-    url || self
+    if url && url.empty?
+      self
+    else
+      url
+    end
   end
 
   def get_button_text
-    button_text || "Show more"
+    if button_text && button_text.empty?
+      "Show more"
+    else
+      button_text
+    end
   end
 end
