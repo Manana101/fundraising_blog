@@ -9,4 +9,7 @@ class Post < ApplicationRecord
 
   mount_uploader :image, ImageUploader
 
+  # def sanitized_content
+  #   Sanitize.fragment(html, Sanitize::Config::RELAXED)
+  # end
 end

@@ -3,7 +3,7 @@
     <div class="row">
       <div class="col">
         <h1><%= @post.title %></h1>
-        <p><%= @post.content %></p>
+        <p><%= raw SafeHtml.relaxed(@post.content) %></p>
         <% if @post.image_url %>
           <%= image_tag @post.image_url.to_s, alt: "Image", class: "img-fluid postImg" %>
         <% end %>

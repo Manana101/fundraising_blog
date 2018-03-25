@@ -39,6 +39,7 @@ gem 'bootstrap', '~> 4.0.0'
 gem 'carrierwave'
 
 gem 'enumerize'
+gem 'sanitize'
 
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
