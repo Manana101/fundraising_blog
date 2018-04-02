@@ -10,25 +10,54 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180325192004) do
+ActiveRecord::Schema.define(version: 20180402175622) do
 
-  create_table "categories", force: :cascade do |t|
-    t.string   "name"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-  end
-
-  create_table "posts", force: :cascade do |t|
+  create_table "actions", force: :cascade do |t|
     t.string   "title"
-    t.text     "content"
-    t.integer  "category_id"
-    t.integer  "type"
-    t.datetime "created_at",  null: false
-    t.datetime "updated_at",  null: false
     t.text     "description"
+    t.text     "content"
+    t.integer  "type"
     t.string   "image"
     t.string   "url"
     t.string   "button_text"
+    t.datetime "created_at",  null: false
+    t.datetime "updated_at",  null: false
+  end
+
+  create_table "houses", force: :cascade do |t|
+    t.string   "title"
+    t.text     "description"
+    t.text     "content"
+    t.integer  "type"
+    t.string   "image"
+    t.string   "url"
+    t.string   "button_text"
+    t.datetime "created_at",  null: false
+    t.datetime "updated_at",  null: false
+  end
+
+  create_table "news", force: :cascade do |t|
+    t.string   "title"
+    t.text     "description"
+    t.text     "content"
+    t.integer  "type"
+    t.string   "image"
+    t.string   "url"
+    t.string   "button_text"
+    t.datetime "created_at",  null: false
+    t.datetime "updated_at",  null: false
+  end
+
+  create_table "teasers", force: :cascade do |t|
+    t.string   "title"
+    t.text     "description"
+    t.text     "content"
+    t.integer  "type"
+    t.string   "image"
+    t.string   "url"
+    t.string   "button_text"
+    t.datetime "created_at",  null: false
+    t.datetime "updated_at",  null: false
   end
 
 end

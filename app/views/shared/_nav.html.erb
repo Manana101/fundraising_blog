@@ -3,17 +3,21 @@
     <div class="col">
       <nav>
         <ul class="nav justify-content-end">
-          <% Category.all.each do |category| %>
-            <li class="nav-item">
-              <%= link_to category.name, posts_path(category: category.name), class: "nav-link" %>
-            </li>
-          <% end %>
+          <li class="nav-item">
+            <%= link_to 'Strona główna', teasers_path, class: "nav-link" %>
+          </li>
+          <li class="nav-item">
+            <%= link_to 'Aktualności', news_index_path, class: "nav-link" %>
+          </li>
+          <li class="nav-item">
+            <%= link_to 'Odbudujmy 3/4', actions_path, class: "nav-link" %>
+          </li>
+          <li class="nav-item">
+            <%= link_to 'Osiedle', houses_path, class: "nav-link" %>
+          </li>
         </ul>
 
         <% if session[:admin] then %>
-          <%= link_to new_post_path, class: "position-absolute editBtn" do %>
-            <span class="btn btn-warning" aria-hidden="true">Add new</span>
-          <% end %>
           <%= link_to logout_path, class: "position-absolute editBtn" do %>
             <span class="btn btn-warning" aria-hidden="true">Log out</span>
           <% end %>

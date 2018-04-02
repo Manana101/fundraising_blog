@@ -1,0 +1,30 @@
+<article class="postContainer position-relative">
+  <div class="row no-gutters">
+    <div class="col">
+
+      <div class="d-flex flex-wrap justify-content-center align-items-center <%= post.type %> postWrapper">
+
+        <% if post.image_url %>
+          <%= image_tag post.image_url.to_s, alt: "Image", class: "img-fluid postImg" %>
+        <% end %>
+
+        <div class="post d-flex flex-wrap justify-content-center align-items-center">
+          <h2 class="title"><%= post.title %></h2>
+          <p class="description">
+            <%= raw SafeHtml.relaxed(post.description) %>
+          </p>
+          <% if !post.content.empty? || (post.url && !post.url.empty?) %>
+            <%= link_to post.get_button_text, post.get_url, class: "btn btn-outline-light" %>
+          <% end %>
+        </div>
+
+        <% if session[:admin] %>
+          <%= link_to post, method: :edit, class: "btn btn-default position-absolute editBtn" do %>
+            <span class="btn btn-warning" aria-hidden="true">Edit post</span>
+          <% end %>
+        <% end %>
+
+      </div>
+    </div>
+  </div>
+</article>

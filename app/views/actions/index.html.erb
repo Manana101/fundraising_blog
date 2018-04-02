@@ -1,0 +1,5 @@
+<div class="container-fluid index-container">
+  <% @posts.each do |post| %>
+    <%= render 'shared/post', post: post %>
+  <% end %>
+</div>
