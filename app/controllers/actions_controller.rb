@@ -5,7 +5,7 @@ class ActionsController < PostsController
   end
 
   def key
-    :campaign
+    :action
   end
 
 end
