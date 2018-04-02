@@ -1,0 +1,18 @@
+<%= form_for @sponsor, html: { multipart: true } do |f| %>
+
+  <%= render 'shared/error_messages', post: @sponsor %>
+
+  <%= f.label :name %><br>
+  <%= f.text_field :name, placeholder: "Type the sponsor name here" %>
+  <br><br>
+  <%= f.label :image %><br>
+  <p>Please use rectangular image of small size</p>
+  <%= f.file_field :image %>
+  <br><br>
+  <%= f.label :url %><br>
+  <%= f.text_field :url, placeholder: "Paste url to sponsor's page here" %>
+  <br><br>
+
+  <%= f.submit %>
+
+<% end %>

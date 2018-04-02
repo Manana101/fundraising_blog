@@ -5,7 +5,3 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
-
-# Category.create(name: 'Aktualności') #TODO add i18n keys here
-# Category.create(name: 'Uratujmy 3/4')
-# Category.create(name: 'Osiedle')

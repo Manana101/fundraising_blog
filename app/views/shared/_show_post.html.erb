@@ -8,7 +8,7 @@
           <%= image_tag @post.image_url.to_s, alt: "Image", class: "img-fluid postImg" %>
         <% end %>
         <% if session[:admin] %>
-          <%= link_to @post, method: :edit, class: "btn btn-default" do %>
+          <%= link_to [:edit, @post], class: "btn btn-default" do %>
             <span class="btn btn-warning" aria-hidden="true">Edit post</span>
           <% end %>
           <%= link_to @post, method: :delete, data: { confirm: "Are you sure?" }, class: "btn btn-default" do %>
